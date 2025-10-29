@@ -1,28 +1,25 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import CV from './components/CV';
-import Profile from './components/Profile';
+import RenderCV from './components/RenderCV';
+import Edit from './components/Edit';
+import { profileData } from './cv-data';
 
 
 function App() {
 
   const [editStatus, SetEditStatus] = useState(false);
+  const [profile, setProfile] = useState(profileData)
 
   function handleEditButton() {
     SetEditStatus(!editStatus);
   }
 
-  function RenderCV() {
-    return (<CV>
-      <Profile />
-    </CV>)
-  }
 
   return (
     <div className='main-container'>
       <Navbar handleEdit={handleEditButton} />
-      {!editStatus ? <RenderCV /> : null}
+      {!editStatus ? <RenderCV profileData={profile} /> : <Edit />}
     </div>
   )
 }
