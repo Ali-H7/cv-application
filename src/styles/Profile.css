@@ -1,0 +1,37 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.name-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.job-title {
+    font-size: 1.6rem;
+}
+
+.about-me {
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    font-size: 1rem;
+    border-bottom: solid 1px #dddfe2;
+    padding: 0.8rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}

@@ -1,0 +1,27 @@
+.nav-bar {
+    /* background-color: #f2f4f7; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 64px;
+    font-size: 1.6rem;
+    padding: 0 32rem 0 32rem;
+    border-bottom: 1px solid #dddfe2;
+    margin-bottom: 64px;
+}
+
+.nav-bar-items {
+    list-style: none;
+    display: flex;
+    gap: 3.2rem;
+    color: #1c1e35;
+}
+
+.logo {
+    color: #0866ff;
+}
+
+.edit-btn:hover {
+    cursor: pointer;
+    color: #0866ff;
+}

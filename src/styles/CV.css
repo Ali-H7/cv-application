@@ -1,0 +1,8 @@
+.CV {
+    aspect-ratio: 0.707;
+    height: 80rem;
+    max-height: 80rem;
+    border: 3px solid #dddfe2;
+    align-self: center;
+    padding: 3.2rem;
+}
