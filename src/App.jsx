@@ -15,11 +15,14 @@ function App() {
     SetEditStatus(!editStatus);
   }
 
+  function handleProfileEdits(userInput, property) {
+    setProfile({ ...profile, [property]: userInput });
+  };
 
   return (
     <div className='main-container'>
       <Navbar handleEdit={handleEditButton} />
-      {!editStatus ? <RenderCV profileData={profile} /> : <Edit />}
+      {!editStatus ? <RenderCV profileData={profile} /> : <Edit profileData={profile} handleUserInput={handleProfileEdits} />}
     </div>
   )
 }

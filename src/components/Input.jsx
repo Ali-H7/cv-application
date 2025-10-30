@@ -4,11 +4,14 @@ function Input({ label, inputType, inputValue, handleOnChange }) {
     return (
         <label>
             {label}:{' '}
-            <input
+            {inputType === 'textarea' ? <textarea
+                value={inputValue}
+                onChange={handleOnChange}
+            /> : <input
                 type={inputType}
                 value={inputValue}
                 onChange={handleOnChange}
-            />
+            />}
         </label>
     )
 }
