@@ -1,0 +1,21 @@
+.edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 2.4rem;
+}
+
+.sections {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.selected {
+    border-bottom: 1px black solid;
+}
+
+button {
+    background: none;
+    border: none;
+}
