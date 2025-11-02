@@ -11,6 +11,7 @@ export const profileData = {
 
 export const workExperienceData = [
     {
+        id: crypto.randomUUID(),
         jobTitle: "Frontend Developer",
         companyName: "PixelCraft Studios",
         workingDate: "2018 - 2021",
@@ -21,6 +22,7 @@ export const workExperienceData = [
         ]
     },
     {
+        id: crypto.randomUUID(),
         jobTitle: "Full Stack Developer",
         companyName: "CodeNest Solutions",
         workingDate: "2021 - 2024",

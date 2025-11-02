@@ -2,10 +2,9 @@ import { useState } from 'react';
 import '../styles/Edit.css'
 import Input from './Input';
 import EditProfileSection from './EditProfileSection';
-import editIcon from '../../public/edit.svg'
 import deleteIcon from '../../public/delete.svg'
 
-function Edit({ profileData, handleProfileEdits, workExperienceData }) {
+function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
     const [section, setSection] = useState(0);
 
@@ -21,18 +20,13 @@ function Edit({ profileData, handleProfileEdits, workExperienceData }) {
             {section === 1 && <div className='work-experience-edit'>
                 {workExperienceData.map((experience, i) => {
                     return (
-                        <div>
+                        <div key={experience.id}>
                             <details>
                                 <summary>
                                     <h3>Work Experience #{i + 1}</h3>
-                                    <div>
-                                        <button>
-                                            <img src={editIcon} alt="edit Icon" />
-                                        </button>
-                                        <button>
-                                            <img src={deleteIcon} alt="Delete Icon" />
-                                        </button>
-                                    </div>
+                                    <button onClick={() => deleteWorkExperienceData(experience.id)}>
+                                        <img src={deleteIcon} alt="Delete Icon" />
+                                    </button>
                                 </summary>
                                 <Input
                                     label='Job Title'

@@ -10,7 +10,7 @@ function App() {
 
   const [editStatus, SetEditStatus] = useState(false);
   const [profile, setProfile] = useState(profileData)
-  const [workExperience, setworkExperience] = useState(workExperienceData)
+  const [workExperience, setWorkExperience] = useState(workExperienceData)
 
 
   function handleEditButton() {
@@ -21,11 +21,15 @@ function App() {
     setProfile(prev => ({ ...prev, [property]: userInput }));
   };
 
+  function handleWorkExperienceDeletion(id) {
+    setWorkExperience(prevItems => prevItems.filter((item) => item.id !== id));
+  }
+
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
       {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} />}
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} />}
     </div>
   )
 }
