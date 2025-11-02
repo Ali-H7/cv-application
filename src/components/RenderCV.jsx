@@ -25,7 +25,7 @@ function RenderCV({ profileData, workExperienceData }) {
                                         <h3>{experience.workingDate}</h3>
                                     </div>
                                     <ul className='work-experience-achivements'>
-                                        {experience.listOfAchievements.map(achivement => <li>{achivement}</li>)}
+                                        {experience.listOfAchievements.map(achievement => <li>{achievement.achievement}</li>)}
                                     </ul>
                                 </div>
                             </div>

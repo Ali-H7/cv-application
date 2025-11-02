@@ -35,11 +35,15 @@ function App() {
     }])
   }
 
+  function handleWorkAchievementsDeletion(expId, achivementID) {
+    setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.filter((item) => item.id !== achivementID) } : exp))
+  }
+
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
       {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} />}
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} />}
     </div>
   )
 }

@@ -16,10 +16,20 @@ export const workExperienceData = [
         companyName: "PixelCraft Studios",
         workingDate: "2018 - 2021",
         listOfAchievements: [
-            "Developed responsive UI components using React.js",
-            "Optimized website performance, reducing load time by 40%",
-            "Collaborated with designers to implement pixel-perfect layouts"
+            {
+                id: crypto.randomUUID(),
+                achievement: "Developed responsive UI components using React.js"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Optimized website performance, reducing load time by 40%"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Collaborated with designers to implement pixel-perfect layouts"
+            }
         ]
+
     },
     {
         id: crypto.randomUUID(),
@@ -27,10 +37,20 @@ export const workExperienceData = [
         companyName: "CodeNest Solutions",
         workingDate: "2021 - 2024",
         listOfAchievements: [
-            "Built RESTful APIs with Node.js and Express",
-            "Integrated MongoDB for dynamic content management",
-            "Led migration from legacy PHP system to modern MERN stack"
+            {
+                id: crypto.randomUUID(),
+                achievement: "Built RESTful APIs with Node.js and Express"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Integrated MongoDB for dynamic content management"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Led migration from legacy PHP system to modern MERN stack"
+            }
         ]
+
     },
     // {
     //     jobTitle: "Web Developer",

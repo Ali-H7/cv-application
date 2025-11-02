@@ -6,7 +6,7 @@ import deleteIcon from '../../public/delete.svg'
 import addIcon from '../../public/add.svg'
 
 
-function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData }) {
+function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
     const [section, setSection] = useState(0);
 
@@ -55,14 +55,19 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkE
                                     <summary>
                                         List of Achivements
                                     </summary>
-                                    {experience.listOfAchievements.map((achivement, i) => {
+                                    {experience.listOfAchievements.map((achievement, i) => {
                                         return (
-                                            <Input
-                                                label={'Achivement #' + (i + 1)}
-                                                inputType='text'
-                                                inputValue={experience.listOfAchievements[i]}
-                                                handleOnChange={null}
-                                            />
+                                            <div key={achievement.id}>
+                                                <Input
+                                                    label={'Achivement #' + (i + 1)}
+                                                    inputType='text'
+                                                    inputValue={achievement.achievement}
+                                                    handleOnChange={null}
+                                                />
+                                                <button onClick={() => deleteAchivement(experience.id, achievement.id)}>
+                                                    <img src={deleteIcon} alt="Delete Icon" />
+                                                </button>
+                                            </div>
                                         )
                                     })}
                                 </details>
