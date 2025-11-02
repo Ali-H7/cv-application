@@ -9,7 +9,10 @@ function Edit({ profileData, handleUserInput }) {
     return (
         <div className='edit'>
             <div className="sections">
-                {editSections.map((sectionLabel, index) => <button className={section === index ? "selected" : ""} onClick={() => { setSection(index) }}>{sectionLabel}</button>)}
+                {editSections.map((sectionLabel, index) =>
+                    <button className={section === index ? "selected" : ""} onClick={() => { setSection(index) }}>
+                        {sectionLabel}
+                    </button>)}
             </div>
             {section === 0 && <div className="profile">
                 <Input

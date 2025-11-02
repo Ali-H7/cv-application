@@ -1,8 +1,40 @@
 .CV {
     aspect-ratio: 0.707;
-    height: 80rem;
-    max-height: 80rem;
+    max-width: 55rem;
     border: 3px solid #dddfe2;
     align-self: center;
     padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.cv-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.cv-section {
+    border-bottom: 1px solid #dddfe2;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.work-experience-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1.6rem;
+}
+
+.work-experience-company {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0.8rem;
+}
+
+.work-experience-achivements {
+    padding-left: 2.4rem;
 }
