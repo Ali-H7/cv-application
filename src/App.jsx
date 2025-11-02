@@ -25,11 +25,21 @@ function App() {
     setWorkExperience(prevItems => prevItems.filter((item) => item.id !== id));
   }
 
+  function handleWorkExperienceAddition() {
+    setWorkExperience(prev => [...prev, {
+      id: crypto.randomUUID(),
+      jobTitle: "",
+      companyName: "",
+      workingDate: "",
+      listOfAchievements: [],
+    }])
+  }
+
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
       {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} />}
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} />}
     </div>
   )
 }

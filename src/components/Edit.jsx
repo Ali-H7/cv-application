@@ -3,8 +3,10 @@ import '../styles/Edit.css'
 import Input from './Input';
 import EditProfileSection from './EditProfileSection';
 import deleteIcon from '../../public/delete.svg'
+import addIcon from '../../public/add.svg'
 
-function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData }) {
+
+function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
     const [section, setSection] = useState(0);
 
@@ -18,6 +20,9 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkE
             </div>
             {section === 0 && <EditProfileSection profileData={profileData} handleProfileEdits={handleProfileEdits} />}
             {section === 1 && <div className='work-experience-edit'>
+                <button onClick={addWorkExperienceData}>
+                    <img src={addIcon} alt="Add Icon" />
+                </button>
                 {workExperienceData.map((experience, i) => {
                     return (
                         <div key={experience.id}>
