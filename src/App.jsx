@@ -24,7 +24,8 @@ function App() {
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
-      {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} /> : <Edit profileData={profile} handleUserInput={handleProfileEdits} />}
+      {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} />}
     </div>
   )
 }
