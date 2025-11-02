@@ -6,7 +6,7 @@ import deleteIcon from '../../public/delete.svg'
 import addIcon from '../../public/add.svg'
 
 
-function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement }) {
+function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement, addAchivement }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
     const [section, setSection] = useState(0);
 
@@ -54,6 +54,9 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkE
                                 <details>
                                     <summary>
                                         List of Achivements
+                                        <button onClick={() => addAchivement(experience.id)}>
+                                            <img src={addIcon} alt="Add Icon" />
+                                        </button>
                                     </summary>
                                     {experience.listOfAchievements.map((achievement, i) => {
                                         return (
