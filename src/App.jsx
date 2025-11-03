@@ -12,7 +12,8 @@ function App() {
   const [profile, setProfile] = useState(profileData);
   const [workExperience, setWorkExperience] = useState(workExperienceData);
   const [education, setEducation] = useState(educationData);
-
+  const data = { profile, workExperience, education }
+  const setters = { setProfile, setWorkExperience, setEducation }
 
   function handleEditButton() {
     SetEditStatus(!editStatus);
@@ -22,34 +23,43 @@ function App() {
     setProfile(prev => ({ ...prev, [property]: userInput }));
   };
 
-  function handleWorkExperienceEdits(expId, userInput, property, achievementId) {
+  function handleEntryEdits(setter, itemId, userInput, property, achievementId) {
     if (property === 'listOfAchievements') {
-      setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.map((achievement) => achievement.id === achievementId ? { ...achievement, achievement: userInput } : achievement) } : exp));
+      setter(prev => prev.map((exp) => exp.id === itemId ? { ...exp, listOfAchievements: exp.listOfAchievements.map((achievement) => achievement.id === achievementId ? { ...achievement, achievement: userInput } : achievement) } : exp));
 
     } else {
-      setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, [property]: userInput } : exp));
+      setter(prev => prev.map((item) => item.id === itemId ? { ...item, [property]: userInput } : item));
     }
   }
 
-  function handleWorkExperienceDeletion(id) {
-    setWorkExperience(prevItems => prevItems.filter((item) => item.id !== id));
+  function handleEntryDeletion(setter, itemID) {
+    setter(prevItems => prevItems.filter((item) => item.id !== itemID));
   }
 
-  function handleWorkExperienceAddition() {
-    setWorkExperience(prev => [...prev, {
-      id: crypto.randomUUID(),
-      jobTitle: "",
-      companyName: "",
-      workingDate: "",
-      listOfAchievements: [],
-    }])
+  function handleEntryAddition(section) {
+    if (section === 1) {
+      setWorkExperience(prev => [...prev, {
+        id: crypto.randomUUID(),
+        jobTitle: "",
+        companyName: "",
+        workingDate: "",
+        listOfAchievements: [],
+      }])
+    } else {
+      setEducation(prev => [...prev, {
+        id: crypto.randomUUID(),
+        institutionName: "",
+        degree: "",
+        graduationYear: "",
+      }])
+    }
   }
 
-  function handleWorkAchievementsDeletion(expId, achivementId) {
+  function handleAchievementsDeletion(expId, achivementId) {
     setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.filter((item) => item.id !== achivementId) } : exp))
   }
 
-  function handleWorkAchievementsAddition(expId) {
+  function handleAchievementsAddition(expId) {
     setWorkExperience(prev => prev.map(exp => exp.id === expId ? {
       ...exp, listOfAchievements: [...exp.listOfAchievements, {
         id: crypto.randomUUID(),
@@ -58,11 +68,13 @@ function App() {
     } : exp));
   }
 
+  const handlers = { handleEntryDeletion, handleEntryAddition, handleEntryEdits, handleAchievementsDeletion, handleAchievementsAddition };
+
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
-      {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} educationData={education} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} educationData={education} handleWorkExperienceEdits={handleWorkExperienceEdits} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} addAchivement={handleWorkAchievementsAddition} />}
+      {!editStatus ? <RenderCV data={data} />
+        : <Edit data={data} setters={setters} handlers={handlers} handleProfileEdits={handleProfileEdits} />}
     </div>
   )
 }

@@ -1,19 +1,16 @@
-import { useState } from 'react';
 import CV from './CV';
 import Profile from './Profile';
 import Section from './Section';
 
-function RenderCV({ profileData, workExperienceData, educationData }) {
-
-
+function RenderCV({ data }) {
     return (
         <CV>
             <Profile
-                profileData={profileData}
+                profileData={data.profile}
             />
             <div className="cv-sections">
-                <Section section="work-experience" data={workExperienceData} />
-                <Section section="education" data={educationData} />
+                <Section section="work-experience" data={data.workExperience} />
+                <Section section="education" data={data.education} />
 
             </div>
         </CV>
