@@ -14,7 +14,7 @@ export const workExperienceData = [
         id: crypto.randomUUID(),
         jobTitle: "Frontend Developer",
         companyName: "PixelCraft Studios",
-        workingDate: "2018 - 2021",
+        workingDate: "2020 - 2021",
         listOfAchievements: [
             {
                 id: crypto.randomUUID(),
@@ -52,14 +52,21 @@ export const workExperienceData = [
         ]
 
     },
-    // {
-    //     jobTitle: "Web Developer",
-    //     companyName: "BrightByte Agency",
-    //     workingDate: "2024 - Present",
-    //     listOfAchievements: [
-    //         "Implemented SEO strategies that increased organic traffic by 60%",
-    //         "Developed custom WordPress themes and plugins",
-    //         "Managed deployment pipelines using GitHub Actions and Netlify"
-    //     ]
-    // }
+];
+
+export const educationData = [
+    {
+        id: crypto.randomUUID(),
+        schoolName: "Greenwood High School",
+        degree: "High School Diploma",
+        graduationYear: "2015",
+
+    },
+    {
+        id: crypto.randomUUID(),
+        universityName: "TechBridge University",
+        degree: "Bachelor of Science in Computer Science",
+        graduationYear: "2019",
+
+    }
 ];

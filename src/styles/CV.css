@@ -21,20 +21,20 @@
     margin-bottom: 0.8rem;
 }
 
-.work-experience-block {
+.section-block {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     margin-bottom: 1.6rem;
 }
 
-.work-experience-company {
+.section-organization {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 0.8rem;
 }
 
-.work-experience-achivements {
+.section-achivements {
     padding-left: 2.4rem;
 }
