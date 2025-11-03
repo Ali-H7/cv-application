@@ -12,27 +12,6 @@ export const profileData = {
 export const workExperienceData = [
     {
         id: crypto.randomUUID(),
-        jobTitle: "Frontend Developer",
-        companyName: "PixelCraft Studios",
-        workingDate: "2020 - 2021",
-        listOfAchievements: [
-            {
-                id: crypto.randomUUID(),
-                achievement: "Developed responsive UI components using React.js"
-            },
-            {
-                id: crypto.randomUUID(),
-                achievement: "Optimized website performance, reducing load time by 40%"
-            },
-            {
-                id: crypto.randomUUID(),
-                achievement: "Collaborated with designers to implement pixel-perfect layouts"
-            }
-        ]
-
-    },
-    {
-        id: crypto.randomUUID(),
         jobTitle: "Full Stack Developer",
         companyName: "CodeNest Solutions",
         workingDate: "2021 - 2024",
@@ -52,21 +31,42 @@ export const workExperienceData = [
         ]
 
     },
+    {
+        id: crypto.randomUUID(),
+        jobTitle: "Frontend Developer",
+        companyName: "PixelCraft Studios",
+        workingDate: "2020 - 2021",
+        listOfAchievements: [
+            {
+                id: crypto.randomUUID(),
+                achievement: "Developed responsive UI components using React.js"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Optimized website performance, reducing load time by 40%"
+            },
+            {
+                id: crypto.randomUUID(),
+                achievement: "Collaborated with designers to implement pixel-perfect layouts"
+            }
+        ]
+
+    }
 ];
 
 export const educationData = [
     {
         id: crypto.randomUUID(),
-        schoolName: "Greenwood High School",
-        degree: "High School Diploma",
-        graduationYear: "2015",
+        institutionName: "TechBridge University",
+        degree: "Bachelor of Science in Computer Science",
+        graduationYear: "2015 - 2019",
 
     },
     {
         id: crypto.randomUUID(),
-        universityName: "TechBridge University",
-        degree: "Bachelor of Science in Computer Science",
-        graduationYear: "2019",
+        institutionName: "Greenwood High School",
+        degree: "High School Diploma",
+        graduationYear: "2012 - 2015",
 
     }
 ];

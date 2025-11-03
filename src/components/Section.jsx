@@ -14,7 +14,7 @@ function Section({ section, data }) {
                         <h2>{checkSection ? item.degree : item.jobTitle}</h2>
                         <div>
                             <div className='section-organization'>
-                                <h3 >{checkSection ? item.schoolName : item.companyName}</h3>
+                                <h3 >{checkSection ? item.institutionName : item.companyName}</h3>
                                 <h3>{checkSection ? item.graduationYear : item.workingDate}</h3>
                             </div>
                             {checkSection ? null : <ul className='section-achivements'>

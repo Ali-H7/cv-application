@@ -2,24 +2,26 @@ import { useState } from 'react';
 import '../styles/Edit.css'
 import Input from './Input';
 import EditProfileSection from './EditProfileSection';
+import EditSection from './EditSection';
 import deleteIcon from '../../public/delete.svg'
 import addIcon from '../../public/add.svg'
 
-
-function Edit({ profileData, handleProfileEdits, workExperienceData, handleWorkExperienceEdits, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement, addAchivement }) {
+function Edit({ profileData, handleProfileEdits, workExperienceData, educationData, handleWorkExperienceEdits, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement, addAchivement }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
-    const [section, setSection] = useState(0);
+    const [selectedSection, setSelectedSection] = useState(0);
 
     return (
         <div className='edit'>
             <div className="sections">
                 {editSections.map((sectionLabel, index) =>
-                    <button className={section === index ? "selected" : ""} onClick={() => { setSection(index) }}>
+                    <button className={selectedSection === index ? "selected" : ""} onClick={() => { setSelectedSection(index) }}>
                         {sectionLabel}
                     </button>)}
             </div>
-            {section === 0 && <EditProfileSection profileData={profileData} handleProfileEdits={handleProfileEdits} />}
-            {section === 1 && <div className='work-experience-edit'>
+            {selectedSection === 0 && <EditProfileSection profileData={profileData} handleProfileEdits={handleProfileEdits} />}
+            {selectedSection === 1 && <EditSection section={selectedSection} data={workExperienceData} />
+
+            /* {selectedSection === 1 && <div className='work-experience-edit'>
                 <button onClick={addWorkExperienceData}>
                     <img src={addIcon} alt="Add Icon" />
                 </button>
@@ -78,7 +80,8 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, handleWorkE
                         </div>
                     )
                 })}
-            </div>}
+            </div>} */}
+            {selectedSection === 2 && <EditSection section={selectedSection} data={educationData} />}
         </div>
     )
 }

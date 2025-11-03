@@ -3,14 +3,15 @@ import './App.css';
 import Navbar from './components/Navbar';
 import RenderCV from './components/RenderCV';
 import Edit from './components/Edit';
-import { profileData, workExperienceData } from './cv-data';
+import { profileData, workExperienceData, educationData } from './cv-data';
 
 
 function App() {
 
   const [editStatus, SetEditStatus] = useState(false);
-  const [profile, setProfile] = useState(profileData)
-  const [workExperience, setWorkExperience] = useState(workExperienceData)
+  const [profile, setProfile] = useState(profileData);
+  const [workExperience, setWorkExperience] = useState(workExperienceData);
+  const [education, setEducation] = useState(educationData);
 
 
   function handleEditButton() {
@@ -60,8 +61,8 @@ function App() {
   return (
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
-      {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} handleWorkExperienceEdits={handleWorkExperienceEdits} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} addAchivement={handleWorkAchievementsAddition} />}
+      {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} educationData={education} />
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} educationData={education} handleWorkExperienceEdits={handleWorkExperienceEdits} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} addAchivement={handleWorkAchievementsAddition} />}
     </div>
   )
 }
