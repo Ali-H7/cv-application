@@ -6,7 +6,7 @@ import deleteIcon from '../../public/delete.svg'
 import addIcon from '../../public/add.svg'
 
 
-function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement, addAchivement }) {
+function Edit({ profileData, handleProfileEdits, workExperienceData, handleWorkExperienceEdits, deleteWorkExperienceData, addWorkExperienceData, deleteAchivement, addAchivement }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
     const [section, setSection] = useState(0);
 
@@ -37,19 +37,19 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkE
                                     label='Job Title'
                                     inputType='text'
                                     inputValue={experience.jobTitle}
-                                    handleOnChange={null}
+                                    handleOnChange={(e) => handleWorkExperienceEdits(experience.id, e.target.value, "jobTitle")}
                                 />
                                 <Input
                                     label='Company Name'
                                     inputType='text'
                                     inputValue={experience.companyName}
-                                    handleOnChange={null}
+                                    handleOnChange={(e) => handleWorkExperienceEdits(experience.id, e.target.value, "companyName")}
                                 />
                                 <Input
                                     label='Working Date'
                                     inputType='text'
                                     inputValue={experience.workingDate}
-                                    handleOnChange={null}
+                                    handleOnChange={(e) => handleWorkExperienceEdits(experience.id, e.target.value, "workingDate")}
                                 />
                                 <details>
                                     <summary>
@@ -65,7 +65,7 @@ function Edit({ profileData, handleProfileEdits, workExperienceData, deleteWorkE
                                                     label={'Achivement #' + (i + 1)}
                                                     inputType='text'
                                                     inputValue={achievement.achievement}
-                                                    handleOnChange={null}
+                                                    handleOnChange={(e) => handleWorkExperienceEdits(experience.id, e.target.value, "listOfAchievements", achievement.id)}
                                                 />
                                                 <button onClick={() => deleteAchivement(experience.id, achievement.id)}>
                                                     <img src={deleteIcon} alt="Delete Icon" />

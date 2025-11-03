@@ -21,6 +21,15 @@ function App() {
     setProfile(prev => ({ ...prev, [property]: userInput }));
   };
 
+  function handleWorkExperienceEdits(expId, userInput, property, achievementId) {
+    if (property === 'listOfAchievements') {
+      setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.map((achievement) => achievement.id === achievementId ? { ...achievement, achievement: userInput } : achievement) } : exp));
+
+    } else {
+      setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, [property]: userInput } : exp));
+    }
+  }
+
   function handleWorkExperienceDeletion(id) {
     setWorkExperience(prevItems => prevItems.filter((item) => item.id !== id));
   }
@@ -35,8 +44,8 @@ function App() {
     }])
   }
 
-  function handleWorkAchievementsDeletion(expId, achivementID) {
-    setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.filter((item) => item.id !== achivementID) } : exp))
+  function handleWorkAchievementsDeletion(expId, achivementId) {
+    setWorkExperience(prev => prev.map((exp) => exp.id === expId ? { ...exp, listOfAchievements: exp.listOfAchievements.filter((item) => item.id !== achivementId) } : exp))
   }
 
   function handleWorkAchievementsAddition(expId) {
@@ -47,7 +56,7 @@ function App() {
     <div className='main-container'>
       <Navbar status={editStatus} handleEdit={handleEditButton} />
       {!editStatus ? <RenderCV profileData={profile} workExperienceData={workExperience} />
-        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} addAchivement={handleWorkAchievementsAddition} />}
+        : <Edit profileData={profile} handleProfileEdits={handleProfileEdits} workExperienceData={workExperience} handleWorkExperienceEdits={handleWorkExperienceEdits} deleteWorkExperienceData={handleWorkExperienceDeletion} addWorkExperienceData={handleWorkExperienceAddition} deleteAchivement={handleWorkAchievementsDeletion} addAchivement={handleWorkAchievementsAddition} />}
     </div>
   )
 }
