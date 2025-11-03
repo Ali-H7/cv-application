@@ -49,7 +49,12 @@ function App() {
   }
 
   function handleWorkAchievementsAddition(expId) {
-    setWorkExperience(prev => prev.map(exp => exp.id === expId ? { ...exp, listOfAchievements: [...exp.listOfAchievements, ""] } : exp));
+    setWorkExperience(prev => prev.map(exp => exp.id === expId ? {
+      ...exp, listOfAchievements: [...exp.listOfAchievements, {
+        id: crypto.randomUUID(),
+        achievement: "",
+      }]
+    } : exp));
   }
 
   return (
