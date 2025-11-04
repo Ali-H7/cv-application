@@ -95,5 +95,4 @@ export const skillsData = [
     { id: crypto.randomUUID(), skill: 'Docker' },
     { id: crypto.randomUUID(), skill: 'CI/CD' },
     { id: crypto.randomUUID(), skill: 'Figma' },
-    { id: crypto.randomUUID(), skill: 'Agile Methodologies' }
 ]

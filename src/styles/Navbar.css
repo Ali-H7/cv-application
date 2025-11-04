@@ -1,13 +1,20 @@
-.nav-bar {
-    /* background-color: #f2f4f7; */
+.nav-bar-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    border-bottom: 1px solid #dddfe2;
+    margin-bottom: 40px;
+}
+
+.nav-bar-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 64px;
     font-size: 1.6rem;
-    padding: 0 32rem 0 32rem;
-    border-bottom: 1px solid #dddfe2;
-    margin-bottom: 64px;
+    padding: 0 3rem;
+    width: 100%;
+    max-width: 800px;
 }
 
 .nav-bar-items {

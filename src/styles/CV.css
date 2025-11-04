@@ -1,12 +1,13 @@
 .CV {
     aspect-ratio: 0.707;
-    max-width: 55rem;
+    width: clamp(360px, 90vw, 600px);
     border: 3px solid #dddfe2;
     align-self: center;
     padding: 3.2rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    margin-bottom: 48px;
 }
 
 .cv-sections {
