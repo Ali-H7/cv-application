@@ -37,3 +37,11 @@
 .section-achivements {
     padding-left: 2.4rem;
 }
+
+.section-skills {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    font-size: 1.3rem;
+}

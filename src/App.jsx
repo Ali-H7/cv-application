@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import RenderCV from './components/RenderCV';
 import Edit from './components/Edit';
-import { profileData, workExperienceData, educationData } from './cv-data';
+import { profileData, workExperienceData, educationData, skillsData } from './cv-data';
 
 
 function App() {
@@ -12,7 +12,9 @@ function App() {
   const [profile, setProfile] = useState(profileData);
   const [workExperience, setWorkExperience] = useState(workExperienceData);
   const [education, setEducation] = useState(educationData);
-  const data = { profile, workExperience, education }
+  const [skills, setSkills] = useState(skillsData);
+
+  const data = { profile, workExperience, education, skills }
   const setters = { setProfile, setWorkExperience, setEducation }
 
   function handleEditButton() {

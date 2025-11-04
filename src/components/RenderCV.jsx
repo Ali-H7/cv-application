@@ -11,6 +11,7 @@ function RenderCV({ data }) {
             <div className="cv-sections">
                 <Section section="work-experience" data={data.workExperience} />
                 <Section section="education" data={data.education} />
+                <Section section="skills" data={data.skills} />
 
             </div>
         </CV>
