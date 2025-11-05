@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/Edit.css'
 import EditProfileSection from './EditProfileSection';
 import EditSection from './EditSection';
+import EditSkillsSection from './EditSkillsSection';
 
 function Edit({ data, setters, handlers, handleProfileEdits, }) {
     const editSections = ['Profile', 'Work Experience', 'Education', 'Skills']
@@ -18,6 +19,7 @@ function Edit({ data, setters, handlers, handleProfileEdits, }) {
             {selectedSection === 0 && <EditProfileSection profileData={data.profile} handleProfileEdits={handleProfileEdits} />}
             {selectedSection === 1 && <EditSection section={selectedSection} data={data.workExperience} setter={setters.setWorkExperience} handlers={handlers} />}
             {selectedSection === 2 && <EditSection section={selectedSection} data={data.education} setter={setters.setEducation} handlers={handlers} />}
+            {selectedSection === 3 && <EditSkillsSection skillsData={data.skills} handleInput={setters.setSkills} />}
         </div>
     )
 }

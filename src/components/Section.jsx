@@ -30,7 +30,7 @@ function Section({ section, data }) {
                         const isOuterItem = (index === 0 && data.length < 1) || index === data.length - 1;
                         return (
                             <>
-                                <li key={item.id}>{item.skill}</li>
+                                <li key={item}>{item.trim()}</li>
                                 {!isOuterItem && <span>|</span>}
                             </>
                         )

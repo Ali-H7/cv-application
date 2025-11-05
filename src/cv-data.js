@@ -71,28 +71,5 @@ export const educationData = [
     }
 ];
 
-export const skillsData = [
-    { id: crypto.randomUUID(), skill: 'HTML5' },
-    { id: crypto.randomUUID(), skill: 'CSS3' },
-    { id: crypto.randomUUID(), skill: 'JavaScript' },
-    { id: crypto.randomUUID(), skill: 'TypeScript' },
-    { id: crypto.randomUUID(), skill: 'React' },
-    { id: crypto.randomUUID(), skill: 'Next.js' },
-    { id: crypto.randomUUID(), skill: 'Redux' },
-    { id: crypto.randomUUID(), skill: 'Tailwind CSS' },
-    { id: crypto.randomUUID(), skill: 'Bootstrap' },
-    { id: crypto.randomUUID(), skill: 'Node.js' },
-    { id: crypto.randomUUID(), skill: 'Express.js' },
-    { id: crypto.randomUUID(), skill: 'MongoDB' },
-    { id: crypto.randomUUID(), skill: 'PostgreSQL' },
-    { id: crypto.randomUUID(), skill: 'Git' },
-    { id: crypto.randomUUID(), skill: 'GitHub' },
-    { id: crypto.randomUUID(), skill: 'REST APIs' },
-    { id: crypto.randomUUID(), skill: 'GraphQL' },
-    { id: crypto.randomUUID(), skill: 'Jest' },
-    { id: crypto.randomUUID(), skill: 'Webpack' },
-    { id: crypto.randomUUID(), skill: 'Vite' },
-    { id: crypto.randomUUID(), skill: 'Docker' },
-    { id: crypto.randomUUID(), skill: 'CI/CD' },
-    { id: crypto.randomUUID(), skill: 'Figma' },
-]
+export const skillsData = 'HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Redux, Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, PostgreSQL, GitHub, REST APIs, GraphQL, Jest, Webpack, Vite, Docker, CI/CD'
+

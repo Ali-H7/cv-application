@@ -15,7 +15,8 @@ function App() {
   const [skills, setSkills] = useState(skillsData);
 
   const data = { profile, workExperience, education, skills }
-  const setters = { setProfile, setWorkExperience, setEducation }
+  const setters = { setProfile, setWorkExperience, setEducation, setSkills }
+
 
   function handleEditButton() {
     SetEditStatus(!editStatus);
@@ -70,7 +71,7 @@ function App() {
     } : exp));
   }
 
-  const handlers = { handleEntryDeletion, handleEntryAddition, handleEntryEdits, handleAchievementsDeletion, handleAchievementsAddition };
+  const handlers = { handleEntryDeletion, handleEntryAddition, handleEntryEdits, handleAchievementsDeletion, handleAchievementsAddition, };
 
   return (
     <div className='main-container'>
