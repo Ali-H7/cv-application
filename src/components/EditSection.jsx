@@ -61,7 +61,10 @@ function EditSection({ section, data, setter, handlers }) {
                         {checkSection && <div className='achievement-container'>
                             <div className='achievement-title'>
                                 <p>List of Achivements</p>
-                                <button onClick={() => handlers.handleAchievementsAddition(item.id)}>
+                                <button onClick={() => {
+                                    handlers.handleAchievementsAddition(item.id)
+                                    setEntryExpanded(item.id)
+                                }}>
                                     <img src={addIcon} alt="Add Icon" />
                                 </button>
                             </div>
