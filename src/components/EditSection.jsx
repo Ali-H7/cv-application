@@ -13,7 +13,10 @@ function EditSection({ section, data, setter, handlers }) {
     let count = data.length
     return (
         <div className='entry-container'>
-            <button className='entry-add' onClick={() => handlers.handleEntryAddition(section)}>
+            <button className='entry-add' onClick={() => {
+                const itemID = handlers.handleEntryAddition(section)
+                setEntryExpanded(itemID);
+            }}>
                 <p>Add Entry</p>
                 <img src={addIcon} alt="Add Icon" />
             </button>

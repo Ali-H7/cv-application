@@ -46,9 +46,10 @@ function App() {
   }
 
   function handleEntryAddition(section) {
+    const newID = crypto.randomUUID()
     if (section === 1) {
       setWorkExperience(prev => [...prev, {
-        id: crypto.randomUUID(),
+        id: newID,
         jobTitle: "",
         companyName: "",
         workingDate: "",
@@ -56,12 +57,13 @@ function App() {
       }])
     } else {
       setEducation(prev => [...prev, {
-        id: crypto.randomUUID(),
+        id: newID,
         institutionName: "",
         degree: "",
         graduationYear: "",
       }])
     }
+    return newID;
   }
 
   function handleAchievementsDeletion(expId, achivementId) {
