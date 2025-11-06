@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import RenderCV from './components/RenderCV';
 import Edit from './components/Edit';
-import { profileData, workExperienceData, educationData, skillsData } from './cv-data';
+import { profileData, workExperienceData, educationData, skillsData, profileDataPreset } from './cv-data';
 
 
 function App() {
@@ -17,6 +17,12 @@ function App() {
   const data = { profile, workExperience, education, skills }
   const setters = { setProfile, setWorkExperience, setEducation, setSkills }
 
+  function clearData() {
+    setProfile(profileDataPreset);
+    setWorkExperience([]);
+    setEducation([]);
+    setSkills("");
+  }
 
   function handleEditButton() {
     SetEditStatus(!editStatus);
@@ -75,7 +81,7 @@ function App() {
 
   return (
     <div className='main-container'>
-      <Navbar status={editStatus} handleEdit={handleEditButton} />
+      <Navbar status={editStatus} handleEdit={handleEditButton} handleDataClear={clearData} />
       {!editStatus ? <RenderCV data={data} />
         : <Edit data={data} setters={setters} handlers={handlers} handleProfileEdits={handleProfileEdits} />}
     </div>

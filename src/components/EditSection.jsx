@@ -64,8 +64,8 @@ function EditSection({ section, data, setter, handlers }) {
                             </div>
                             {item.listOfAchievements.map((achievement, i) => {
                                 return (
-                                    <div className={entryExpanded === item.id ? 'entry-shown' : 'entry-hidden'}>
-                                        <div key={achievement.id} className='achievement-entry'>
+                                    <div key={achievement.id} className={entryExpanded === item.id ? 'entry-shown' : 'entry-hidden'}>
+                                        <div className='achievement-entry'>
                                             <Input
                                                 label={'Achivement #' + (i + 1)}
                                                 inputType='text'

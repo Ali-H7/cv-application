@@ -73,3 +73,13 @@ export const educationData = [
 
 export const skillsData = 'HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Redux, Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, PostgreSQL, GitHub, REST APIs, GraphQL, Jest, Webpack, Vite, Docker, CI/CD'
 
+export const profileDataPreset = {
+    firstName: "",
+    lastName: "",
+    jobTitle: "",
+    aboutMe: "",
+    email: "",
+    phoneNumber: "",
+    location: "",
+    website: "",
+};
