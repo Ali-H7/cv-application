@@ -1,11 +1,11 @@
 export const profileData = {
     firstName: "Ali",
-    lastName: "Hassan",
-    jobTitle: "Web Developer",
-    aboutMe: "Passionate web developer with 5+ years of experience building responsive and user-friendly websites. Skilled in HTML, CSS, JavaScript, and modern frameworks like React and Node.js. Always eager to learn new technologies and deliver high-quality digital experiences.",
-    email: "123456@gmail.com",
-    phoneNumber: "66110011",
-    location: "Sitra, Bahrain",
+    lastName: "Hasan",
+    jobTitle: "Full Stack Developer",
+    aboutMe: "Highly effective Full Stack Developer with four years of experience specializing in the MERN stack (Node.js, Express, MongoDB, React.js). Expertise includes architecting scalable RESTful APIs, frontend performance optimization (achieving a 40% load time reduction), and leading the successful migration of a legacy PHP platform to a modern MERN architecture. Holds a B.S. in Computer Science.",
+    email: "example@gmail.com",
+    phoneNumber: "+973 0000000",
+    location: "Bahrain",
     website: "https://github.com/Ali-H7/",
 };
 

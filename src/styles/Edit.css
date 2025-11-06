@@ -3,12 +3,17 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
-    gap: 2.4rem;
+    gap: 24px;
 }
 
 .sections {
     display: flex;
-    gap: 2.4rem;
+    gap: 24px;
+}
+
+.not-selected:hover {
+    cursor: pointer;
+    color: #0866ff;
 }
 
 .selected {
@@ -18,4 +23,81 @@
 button {
     background: none;
     border: none;
+}
+
+.entry button:hover {
+    cursor: pointer;
+    background-color: rgba(8, 102, 255, 0.2);
+    border-radius: 3px;
+}
+
+.entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 300px;
+}
+
+.entry-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(66, 183, 42, 0.1);
+    border: 1px solid #42b72a;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.entry-add:hover {
+    background-color: rgba(66, 183, 42, 0.2);
+    cursor: pointer;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(8, 102, 255, 0.1);
+    border: 1px solid #0866ff;
+    padding: 16px;
+    gap: 8px;
+    border-radius: 8px;
+}
+
+.entry-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.entry-shown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.entry-hidden {
+    display: none;
+}
+
+.achievement-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.achievement-entry {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.achievement-delete {
+    align-self: flex-end;
+    margin-bottom: 2px;
 }

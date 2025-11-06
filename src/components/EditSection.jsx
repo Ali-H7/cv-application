@@ -1,25 +1,41 @@
+import { useState } from 'react';
 import Input from './Input';
 import addIcon from '../../public/add.svg'
 import deleteIcon from '../../public/delete.svg'
+import arrowLeft from '../../public/arrow-left.svg'
+import arrowDown from '../../public/arrow-down.svg'
 
 function EditSection({ section, data, setter, handlers }) {
+    const [entryExpanded, setEntryExpanded] = useState(-1);
     const checkSection = section === 1
     const properties = section === 1 ? ['jobTitle', 'companyName', 'workingDate'] : ['degree', 'institutionName', 'graduationYear']
+    const reversedData = [...data].reverse()
+    let count = data.length
     return (
-        <div className='work-experience-edit'>
-            <button onClick={() => handlers.handleEntryAddition(section)}>
+        <div className='entry-container'>
+            <button className='entry-add' onClick={() => handlers.handleEntryAddition(section)}>
+                <p>Add Entry</p>
                 <img src={addIcon} alt="Add Icon" />
             </button>
-            {data.map((item, i) => {
+            {reversedData.map((item) => {
                 return (
-                    <div key={item.id}>
-                        <details>
-                            <summary>
-                                <h3>{checkSection ? `Work Experience #${i + 1}` : `Education Entry #${i + 1}`}</h3>
-                                <button onClick={() => handlers.handleEntryDeletion(setter, item.id)}>
+                    <div key={item.id} className="entry">
+                        <div className="entry-title">
+                            <h4>{checkSection ? `Work Experience #${count--}` : `Education #${count--}`}</h4>
+                            <div className="entry-buttons">
+                                <button onClick={() => {
+                                    handlers.handleEntryDeletion(setter, item.id)
+                                }}>
                                     <img src={deleteIcon} alt="Delete Icon" />
                                 </button>
-                            </summary>
+                                {entryExpanded === item.id ? <button onClick={() => setEntryExpanded(-1)}>
+                                    <img src={arrowLeft} alt="Arrow Left" />
+                                </button> : <button onClick={() => setEntryExpanded(item.id)}>
+                                    <img src={arrowDown} alt="Arrow Down" />
+                                </button>}
+                            </div>
+                        </div>
+                        <div className={entryExpanded === item.id ? 'entry-shown' : 'entry-hidden'} >
                             <Input
                                 label={checkSection ? 'Job Title' : 'Degree'}
                                 inputType='text'
@@ -38,30 +54,32 @@ function EditSection({ section, data, setter, handlers }) {
                                 inputValue={checkSection ? item.workingDate : item.graduationYear}
                                 handleOnChange={(e) => handlers.handleEntryEdits(setter, item.id, e.target.value, properties[2])}
                             />
-                            {checkSection && <details>
-                                <summary>
-                                    List of Achivements
-                                    <button onClick={() => handlers.handleAchievementsAddition(item.id)}>
-                                        <img src={addIcon} alt="Add Icon" />
-                                    </button>
-                                </summary>
-                                {item.listOfAchievements.map((achievement, i) => {
-                                    return (
-                                        <div key={achievement.id}>
+                        </div>
+                        {checkSection && <div className='achievement-container'>
+                            <div className='achievement-title'>
+                                <p>List of Achivements</p>
+                                <button onClick={() => handlers.handleAchievementsAddition(item.id)}>
+                                    <img src={addIcon} alt="Add Icon" />
+                                </button>
+                            </div>
+                            {item.listOfAchievements.map((achievement, i) => {
+                                return (
+                                    <div className={entryExpanded === item.id ? 'entry-shown' : 'entry-hidden'}>
+                                        <div key={achievement.id} className='achievement-entry'>
                                             <Input
                                                 label={'Achivement #' + (i + 1)}
                                                 inputType='text'
                                                 inputValue={achievement.achievement}
                                                 handleOnChange={(e) => handlers.handleEntryEdits(setter, item.id, e.target.value, 'listOfAchievements', achievement.id)}
                                             />
-                                            <button onClick={() => handlers.handleAchievementsDeletion(item.id, achievement.id)}>
+                                            <button onClick={() => handlers.handleAchievementsDeletion(item.id, achievement.id)} className='achievement-delete'>
                                                 <img src={deleteIcon} alt="Delete Icon" />
                                             </button>
                                         </div>
-                                    )
-                                })}
-                            </details>}
-                        </details>
+                                    </div>
+                                )
+                            })}
+                        </div>}
                     </div>
                 )
             })}

@@ -12,7 +12,7 @@ function Edit({ data, setters, handlers, handleProfileEdits, }) {
         <div className='edit'>
             <div className="sections">
                 {editSections.map((sectionLabel, index) =>
-                    <button className={selectedSection === index ? "selected" : ""} onClick={() => { setSelectedSection(index) }}>
+                    <button className={selectedSection === index ? "selected" : "not-selected"} onClick={() => { setSelectedSection(index) }}>
                         {sectionLabel}
                     </button>)}
             </div>
