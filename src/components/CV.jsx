@@ -1,12 +1,7 @@
-import '../styles/CV.css'
+import '../styles/CV.css';
 
 function CV({ children }) {
-
-    return (
-        <div className='CV'>
-            {children}
-        </div>
-    )
+  return <div className='CV'>{children}</div>;
 }
 
-export default CV
+export default CV;

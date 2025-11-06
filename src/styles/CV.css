@@ -1,48 +1,48 @@
 .CV {
-    aspect-ratio: 0.707;
-    width: clamp(360px, 90vw, 600px);
-    border: 3px solid #dddfe2;
-    align-self: center;
-    padding: 3.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    margin-bottom: 48px;
+  aspect-ratio: 0.707;
+  width: clamp(360px, 90vw, 600px);
+  border: 3px solid #dddfe2;
+  align-self: center;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 48px;
 }
 
 .cv-sections {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .cv-section {
-    border-bottom: 1px solid #dddfe2;
-    padding-bottom: 0.8rem;
-    margin-bottom: 0.8rem;
+  border-bottom: 1px solid #dddfe2;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .section-block {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.6rem;
 }
 
 .section-organization {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.8rem;
 }
 
 .section-achivements {
-    padding-left: 2.4rem;
+  padding-left: 2.4rem;
 }
 
 .section-skills {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    font-size: 1.3rem;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 1.3rem;
 }

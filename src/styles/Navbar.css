@@ -1,35 +1,35 @@
 .nav-bar-container {
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #dddfe2;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #dddfe2;
+  margin-bottom: 40px;
 }
 
 .nav-bar-content {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-    font-size: 1.6rem;
-    padding: 0 3rem;
-    width: 100%;
-    max-width: 800px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  font-size: 1.6rem;
+  padding: 0 3rem;
+  width: 100%;
+  max-width: 800px;
 }
 
 .nav-bar-items {
-    list-style: none;
-    display: flex;
-    gap: 3.2rem;
-    color: #1c1e35;
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  color: #1c1e35;
 }
 
 .logo {
-    cursor: default;
-    color: #0866ff;
+  cursor: default;
+  color: #0866ff;
 }
 
 .nav-bar-btn:hover {
-    cursor: pointer;
-    color: #0866ff;
+  cursor: pointer;
+  color: #0866ff;
 }
